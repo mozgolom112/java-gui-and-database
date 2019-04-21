@@ -16,4 +16,10 @@ public class ClickerController {
         clickedCounter++;
         text.setText("You clicked " + clickedCounter + " times");
     }
+
+    @FXML
+    public void doForThisForMinus(ActionEvent actionEvent) {
+        clickedCounter--;
+        text.setText("You clicked " + clickedCounter + " times");
+    }
 }

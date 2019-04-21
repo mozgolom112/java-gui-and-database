@@ -9,7 +9,11 @@
           fx:controller="ru.overtired.javafx.sample2.ClickerController"
           xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Button onAction="#doThisOnClick" text="button"/>
+        <Button onAction="#doThisOnClick" text="Plus"/>
+
         <Label fx:id="text" text="Click on button"/>
+
+        <Button onAction="#doForThisForMinus" text="Minus"/>
     </children>
+
 </FlowPane>

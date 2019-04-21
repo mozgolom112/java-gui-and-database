@@ -2,7 +2,8 @@ package ru.overtired.javafx.sample3.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import ru.overtired.javafx.sample3.models.User;
+import ru.overtired.javafx.sample3.models.Crew;
+import ru.overtired.javafx.sample3.models.Status;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -38,7 +39,8 @@ public class HibernateManager {
         }
 
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Crew.class);
+        configuration.addAnnotatedClass(Status.class);
         configuration.addProperties(dbConnectionProperties);
 
         return configuration.buildSessionFactory();
@@ -56,8 +58,8 @@ public class HibernateManager {
        entityManager.persist(entity);
     }
 
-    public List<User> getAllUsers() {
-        TypedQuery<User> userQuery = entityManager.createQuery("Select u from User u", User.class);
+    public List<Crew> getAllCrew() {
+        TypedQuery<Crew> userQuery = entityManager.createQuery("Select u from Crew u", Crew.class);
         return userQuery.getResultList();
     }
 }
